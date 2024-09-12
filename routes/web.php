@@ -36,5 +36,10 @@ Route::get('/courses/create', function(){
     $course->course_name = 'Inttroduction to Databse';
     $course->save();
     return 'Course Created!';
+});
+
+Route::get('/course/{id}/students', function ($id) {
+    $course = Course::find($id);
+    return $course->students;
 })
 ?>
